@@ -9,6 +9,13 @@ import { getMenuItems, formatPrice, isBogoActive } from "@/lib/menu";
 import { MenuItem } from "@/types";
 import ScrollToTop from "@/components/ScrollToTop";
 
+export async function generateStaticParams() {
+  const items = getMenuItems();
+  return items.map((item) => ({
+    id: item.id,
+  }));
+}
+
 export default function ProductDetail({ params }: { params: { id: string } }) {
   const router = useRouter();
   const { addToCart } = useCart();
