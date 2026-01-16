@@ -75,7 +75,7 @@ export default function CartPage() {
           <h1 style={{ margin: 0, fontSize: "2rem" }}>Your Cart</h1>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 32, alignItems: "start" }}>
+        <div className="cart-grid-layout">
           
           {/* Cart Items List */}
           <div className="card" style={{ padding: 24 }}>
