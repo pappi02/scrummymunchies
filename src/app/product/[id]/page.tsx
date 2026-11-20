@@ -8,6 +8,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ProductDetail({ params }: { params: { id: string } }) {
-  return <ProductDetailClient params={params} />;
+// Next.js 15+: dynamic route params are passed as a Promise.
+export default async function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  return <ProductDetailClient params={{ id }} />;
 }
